@@ -1,7 +1,7 @@
 import AppHeader from "@/components/header";
 import DashboardClient from "@/components/dashboard-client";
-import { SidebarProvider, Sidebar, SidebarHeader, SidebarContent, SidebarInset, SidebarMenuItem, SidebarMenu, SidebarMenuButton, SidebarFooter } from "@/components/ui/sidebar";
-import { LayoutDashboard } from "lucide-react";
+import { SidebarProvider, Sidebar, SidebarHeader, SidebarContent, SidebarGroup, SidebarGroupLabel, SidebarMenuItem, SidebarMenu, SidebarMenuButton, SidebarFooter } from "@/components/ui/sidebar";
+import { LayoutDashboard, ListTodo } from "lucide-react";
 import Link from "next/link";
 import { users } from "@/lib/data";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -63,12 +63,18 @@ export default function DashboardPage() {
           <span className="text-lg font-semibold text-primary">StoreFlow</span>
         </SidebarHeader>
         <SidebarContent>
-           <div className="p-2">
-            <Link href="/" className="w-full text-left p-3 rounded-lg transition-colors hover:bg-accent block font-semibold text-sm">
-                Back to Tasks
-            </Link>
-           </div>
-          <SidebarMenu>
+          <SidebarGroup>
+            <SidebarGroupLabel className="flex items-center gap-2">
+              <ListTodo />
+              <span>Navigation</span>
+            </SidebarGroupLabel>
+            <div className="p-2">
+              <Link href="/" className="w-full text-left p-3 rounded-lg transition-colors hover:bg-accent block font-semibold text-sm">
+                  Back to Tasks
+              </Link>
+            </div>
+          </SidebarGroup>
+          <SidebarMenu className="mt-auto">
             <SidebarMenuItem>
               <Link href="/dashboard" className="w-full">
                 <SidebarMenuButton
