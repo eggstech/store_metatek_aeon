@@ -11,6 +11,8 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
   SidebarFooter,
+  SidebarGroup,
+  SidebarGroupLabel,
 } from "@/components/ui/sidebar";
 import {
   Avatar,
@@ -22,7 +24,7 @@ import TaskList from "@/components/task-list";
 import TaskDetail from "@/components/task-detail";
 import { Task, User } from "@/lib/types";
 import { tasks, users } from "@/lib/data";
-import { LayoutDashboard } from "lucide-react";
+import { LayoutDashboard, ListTodo } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -99,12 +101,18 @@ export default function AppLayout() {
           <span className="text-lg font-semibold text-primary">StoreFlow</span>
         </SidebarHeader>
         <SidebarContent>
-          <TaskList
-            tasks={allTasks}
-            onSelectTask={handleSelectTask}
-            selectedTaskId={selectedTask?.id}
-          />
-          <SidebarMenu>
+          <SidebarGroup>
+             <SidebarGroupLabel className="flex items-center gap-2">
+              <ListTodo />
+              <span>Tasks</span>
+            </SidebarGroupLabel>
+            <TaskList
+              tasks={allTasks}
+              onSelectTask={handleSelectTask}
+              selectedTaskId={selectedTask?.id}
+            />
+          </SidebarGroup>
+          <SidebarMenu className="mt-auto">
             <SidebarMenuItem>
               <Link href="/dashboard" className="w-full">
                 <SidebarMenuButton
