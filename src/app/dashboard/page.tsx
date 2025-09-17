@@ -1,11 +1,10 @@
 import AppHeader from "@/components/header";
 import DashboardClient from "@/components/dashboard-client";
-import { SidebarProvider, Sidebar, SidebarHeader, SidebarContent, SidebarGroup, SidebarGroupLabel, SidebarMenuItem, SidebarMenu, SidebarMenuButton, SidebarFooter } from "@/components/ui/sidebar";
+import { SidebarProvider, Sidebar, SidebarHeader, SidebarContent, SidebarGroup, SidebarGroupLabel, SidebarMenuItem, SidebarMenu, SidebarMenuButton, SidebarFooter, SidebarInset } from "@/components/ui/sidebar";
 import { LayoutDashboard, ListTodo } from "lucide-react";
 import Link from "next/link";
 import { users } from "@/lib/data";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import TaskList from "@/components/task-list";
 import { tasks } from "@/lib/data";
 
 const Logo = () => (
